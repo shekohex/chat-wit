@@ -1,0 +1,16 @@
+[package]
+name = "msg-sha256"
+version = "0.1.0"
+edition.workspace = true
+
+
+[dependencies]
+cargo-component-bindings = "0.6.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[package.metadata.component]
+package = "component:msg-sha256"
+
+[package.metadata.component.dependencies]
