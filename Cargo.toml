@@ -1,0 +1,34 @@
+[workspace]
+package.edition = "2021"
+resolver = "2"
+members = [
+  "crates/*",
+  "server",
+]
+
+[workspace.dependencies]
+futures = { version = "0.3", default-features = false }
+thiserror = "1.0"
+anyhow = "1.0"
+serde = { version = "1.0", default-features = false, features = ["alloc", "derive"] }
+bytes = { version = "1.5", default-features = false }
+async-trait = { version = "0.1", default-features = false }
+tracing = { version = "0.1", default-features = false }
+tokio-stream = { version = "0.1.8", default-features = false }
+parking_lot = { version = "0.12.1", default-features = false, features = [] }
+rand = "0.8"
+arc-swap = { version = "1.6", features = ["weak"] }
+atomic = { version = "0.6", default-features = false }
+chrono = { version = "0.4", default-features = false, features = [] }
+environmental = { version = "1.1.4", default-features = false }
+
+[workspace.dependencies.tokio]
+version = "1.21"
+default-features = false
+
+[workspace.dependencies.sqlx]
+default-features = false
+version = "0.7.3"
+
+[profile.dev]
+split-debuginfo = 'packed'
